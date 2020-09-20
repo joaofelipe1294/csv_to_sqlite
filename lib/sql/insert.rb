@@ -1,7 +1,7 @@
-module CsvToSQLite::SQL
+module CsvToSqlite::SQL
 
   class Insert
-    
+
     def initialize connection:, csv_table:, name:
       @connection = connection
       @csv_table = csv_table

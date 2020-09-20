@@ -1,12 +1,12 @@
 require_relative "../../../lib/csv_reader"
 require_relative "../../../lib/sql/column"
 
-RSpec.describe CsvToSQLite::SQL::Column do
+RSpec.describe CsvToSqlite::SQL::Column do
 
   describe '#sql_for' do
     before :each do
-      csv_table = CsvToSQLite::CsvReader.load_file 'spec/test_files/test_file.csv'
-      @column = CsvToSQLite::SQL::Column.new csv_table: csv_table
+      csv_table = CsvToSqlite::CsvReader.load_file 'spec/test_files/test_file.csv'
+      @column = CsvToSqlite::SQL::Column.new csv_table: csv_table
     end
     context 'when value is a integer' do
       it 'is expected to return "column INTEGER,"' do

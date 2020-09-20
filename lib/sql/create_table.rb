@@ -1,7 +1,7 @@
 require_relative './column'
 require_relative '../database'
 
-module CsvToSQLite::SQL
+module CsvToSqlite::SQL
 
   class CreateTable
 
@@ -26,7 +26,7 @@ module CsvToSQLite::SQL
     end
 
     def columns
-      @column_generator = CsvToSQLite::SQL::Column.new(csv_table: @csv_table)
+      @column_generator = CsvToSqlite::SQL::Column.new(csv_table: @csv_table)
       columns_sql = @csv_table.headers.map do |column|
         @column_generator.sql_for column
       end

@@ -1,18 +1,18 @@
 require_relative '../../lib/database'
 
-RSpec.describe CsvToSQLite::Database do
+RSpec.describe CsvToSqlite::Database do
 
   describe '#create' do
     context 'when database has default name' do
       context 'when there isnt a file sqlite file' do
         it 'is expected to create a new sqlite file' do
-          CsvToSQLite::Database.new.create
+          CsvToSqlite::Database.new.create
           expect(File).to exist('./data.sqlite3')
           File.delete './data.sqlite3'
         end
         it 'is expected to print "Creating database"' do
           expect {
-            CsvToSQLite::Database.new.create
+            CsvToSqlite::Database.new.create
             File.delete './data.sqlite3'
           }.to output("Creating database\n").to_stdout
         end
@@ -21,7 +21,7 @@ RSpec.describe CsvToSQLite::Database do
         it 'is expected to puts "Database found"' do
           expect {
             File.open('./data.sqlite3', 'w')
-            CsvToSQLite::Database.new.create
+            CsvToSqlite::Database.new.create
             File.delete './data.sqlite3'
           }.to output("Database found\n").to_stdout
         end
@@ -30,7 +30,7 @@ RSpec.describe CsvToSQLite::Database do
     context 'when database has custom name' do
       context 'when there isnt a file sqlite file' do
         it 'is expected to create a new sqlite file' do
-          CsvToSQLite::Database.new(db_name: 'nerv_database.sqlite3').create
+          CsvToSqlite::Database.new(db_name: 'nerv_database.sqlite3').create
           expect(File).to exist('./nerv_database.sqlite3')
           File.delete './nerv_database.sqlite3'
         end

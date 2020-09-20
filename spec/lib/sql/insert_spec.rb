@@ -3,13 +3,13 @@ require_relative "../../../lib/database"
 require_relative "../../../lib/sql/create_table"
 
 
-RSpec.describe CsvToSQLite::SQL::Insert do
+RSpec.describe CsvToSqlite::SQL::Insert do
 
   before :each do
-    @connection = CsvToSQLite::Database.new.connect
-    csv_table = CsvToSQLite::CsvReader.load_file 'spec/test_files/test_file.csv'
-    CsvToSQLite::SQL::CreateTable.new(name: "persons", csv_table: csv_table, connection: @connection).run
-    CsvToSQLite::SQL::Insert.new(name: "persons", csv_table: csv_table, connection: @connection).run
+    @connection = CsvToSqlite::Database.new.connect
+    csv_table = CsvToSqlite::CsvReader.load_file 'spec/test_files/test_file.csv'
+    CsvToSqlite::SQL::CreateTable.new(name: "persons", csv_table: csv_table, connection: @connection).run
+    CsvToSqlite::SQL::Insert.new(name: "persons", csv_table: csv_table, connection: @connection).run
   end
 
   after :each do

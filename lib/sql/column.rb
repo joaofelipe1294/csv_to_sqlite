@@ -1,7 +1,7 @@
-module CsvToSQLite::SQL
+module CsvToSqlite::SQL
 
   class Column
-    
+
     def initialize csv_table:
       @csv_table = csv_table
     end
@@ -11,7 +11,7 @@ module CsvToSQLite::SQL
       if int?
         type = "INTEGER"
       elsif float?
-        type = "FLOAT" 
+        type = "FLOAT"
       elsif boolean?
         type = "BOOLEAN"
       elsif datetime?
@@ -33,7 +33,7 @@ module CsvToSQLite::SQL
     end
 
     def boolean?
-      match_cases = @data.map do |value| 
+      match_cases = @data.map do |value|
         return true if value == 't' or value == 'f' or value == 'true' or value == 'false'
         return false
       end
@@ -41,8 +41,8 @@ module CsvToSQLite::SQL
     end
 
     def date?
-      match_cases = @data.map do |value| 
-        begin 
+      match_cases = @data.map do |value|
+        begin
           Date.parse value
           return true unless value.include? ":"
           return false
@@ -54,8 +54,8 @@ module CsvToSQLite::SQL
     end
 
     def datetime?
-      match_cases = @data.map do |value| 
-        begin 
+      match_cases = @data.map do |value|
+        begin
           DateTime.parse value
           return true if value.include? ":"
           return false
@@ -67,8 +67,8 @@ module CsvToSQLite::SQL
     end
 
     def meta_comparing type
-      match_cases = @data.map do |value| 
-        begin 
+      match_cases = @data.map do |value|
+        begin
           method = Kernel.method(type)
           method.call value
           return true

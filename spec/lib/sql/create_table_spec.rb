@@ -2,12 +2,12 @@ require_relative "../../../lib/csv_reader"
 require_relative "../../../lib/sql/create_table"
 require_relative "../../../lib/database"
 
-RSpec.describe CsvToSQLite::SQL::CreateTable do
+RSpec.describe CsvToSqlite::SQL::CreateTable do
 
   before :each do
-    connection = CsvToSQLite::Database.new.connect
-    csv_table = CsvToSQLite::CsvReader.load_file 'spec/test_files/test_file.csv'
-    @table_maker = CsvToSQLite::SQL::CreateTable.new name: "some_table", csv_table: csv_table, connection: connection
+    connection = CsvToSqlite::Database.new.connect
+    csv_table = CsvToSqlite::CsvReader.load_file 'spec/test_files/test_file.csv'
+    @table_maker = CsvToSqlite::SQL::CreateTable.new name: "some_table", csv_table: csv_table, connection: connection
   end
 
   after :each do

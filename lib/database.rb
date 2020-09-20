@@ -1,6 +1,6 @@
 require 'sqlite3'
 
-module CsvToSQLite
+module CsvToSqlite
   class Database
 
     def initialize db_name: "data.sqlite3"
@@ -23,7 +23,7 @@ module CsvToSQLite
       SQLite3::Database.new @database_path
     end
 
-    private 
+    private
 
       def target_dir
         return './spec/src/' if ENV.key? "test"

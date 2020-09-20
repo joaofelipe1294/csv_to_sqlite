@@ -1,6 +1,6 @@
 require "csv"
 
-module CsvToSQLite
+module CsvToSqlite
 
   class CsvReader
 
