@@ -3,7 +3,7 @@ require_relative 'lib/csv_to_sqlite/version'
 Gem::Specification.new do |spec|
   spec.name          = "csv_to_sqlite"
   spec.version       = CsvToSqlite::VERSION
-  spec.authors       = ["joaofelipe"]
+  spec.authors       = ["joaofelipelopes"]
   spec.email         = ["joaofelipe1294@gmail.com"]
 
   spec.summary       = %q{An easy way to convert a csv file into SQLite database.}
