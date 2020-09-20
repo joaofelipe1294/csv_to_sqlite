@@ -4,5 +4,5 @@ source "https://rubygems.org"
 gemspec
 
 gem "rake", "~> 12.0"
-gem "rspec", "~> 3.0"
+gem 'rspec', '~> 3.9'
 gem 'sqlite3', '~> 1.4', '>= 1.4.2'

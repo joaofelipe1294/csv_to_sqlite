@@ -13,7 +13,7 @@ RSpec.describe CsvToSQLite::SQL::Insert do
   end
 
   after :each do
-    File.delete 'spec/lib/data.sqlite3'
+    File.delete './data.sqlite3'
   end
 
   describe '#run' do

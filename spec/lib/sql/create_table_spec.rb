@@ -11,7 +11,7 @@ RSpec.describe CsvToSQLite::SQL::CreateTable do
   end
 
   after :each do
-    File.delete 'spec/lib/data.sqlite3'
+    File.delete './data.sqlite3'
   end
 
   describe '#create_statement' do
