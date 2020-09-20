@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'csv_to_sqlite'
+CsvToSqlite::CsvToSQLite.new.convert(ARGV[0])
