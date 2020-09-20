@@ -9,9 +9,9 @@ module CsvToSqlite
 
   class CsvToSQLite
 
-    def convert
+    def convert file_path
       connection = CsvToSqlite::Database.new().connect
-      csv_table  = CsvToSqlite::CsvReader.load_file './spec/test_files/test_file.csv'
+      csv_table  = CsvToSqlite::CsvReader.load_file file_path
       CsvToSqlite::SQL::CreateTable.new(name: 'persons', csv_table: csv_table, connection: connection).run
       CsvToSqlite::SQL::Insert.new(name: 'persons', csv_table: csv_table, connection: connection).run
     end
