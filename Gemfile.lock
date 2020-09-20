@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    csv_to_sqlite (0.1.0)
+    csv_to_sqlite3 (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -27,7 +27,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  csv_to_sqlite!
+  csv_to_sqlite3!
   rake (~> 12.0)
   rspec (~> 3.9)
   sqlite3 (~> 1.4, >= 1.4.2)
