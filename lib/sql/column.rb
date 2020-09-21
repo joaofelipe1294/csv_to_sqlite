@@ -8,7 +8,9 @@ module CsvToSqlite::SQL
 
     def sql_for column
       @data = @csv_table[column][0..2]
-      if int?
+      if null?
+        type = "TEXT DEFAULT NULL"
+      elsif int?
         type = "INTEGER"
       elsif float?
         type = "FLOAT"
@@ -22,6 +24,11 @@ module CsvToSqlite::SQL
         type = "TEXT"
       end
       "#{column} #{type},"
+    end
+
+    def null?
+      match_cases = @data.map { |value| value == nil }
+      match_cases.any? { |value| value == true }
     end
 
     def int?
