@@ -8,12 +8,12 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{An easy way to convert a csv file into SQLite database.}
   spec.description   = %q{Add a better description.}
-  spec.homepage      = "https://github.com/joaofelipe1294/csv_to_sqlite"
+  spec.homepage      = "https://github.com/joaofelipe1294/csv_to_sqlite3"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/joaofelipe1294/csv_to_sqlite"
+  spec.metadata["source_code_uri"] = "https://github.com/joaofelipe1294/csv_to_sqlite3"
   # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   # Specify which files should be added to the gem when it is released.
