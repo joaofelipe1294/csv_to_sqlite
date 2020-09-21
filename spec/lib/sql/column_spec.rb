@@ -5,7 +5,7 @@ RSpec.describe CsvToSqlite::SQL::Column do
 
   describe '#sql_for' do
     before :each do
-      csv_table = CsvToSqlite::CsvReader.load_file 'spec/test_files/test_file.csv'
+      csv_table = CsvToSqlite::CsvReader.new('spec/test_files/test_file.csv').load_file
       @column = CsvToSqlite::SQL::Column.new csv_table: csv_table
     end
     context 'when value is a integer' do

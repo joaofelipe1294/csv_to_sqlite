@@ -13,3 +13,4 @@
 *.gem
 
 *.sqlite3
+examples/

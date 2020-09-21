@@ -6,17 +6,16 @@
 # task :default => :spec
 
 
-require_relative "lib/database"
-require_relative "lib/csv_reader"
-require_relative "lib/sql/create_table"
-require_relative "lib/sql/insert"
+# require_relative "lib/database"
+# require_relative "lib/csv_reader"
+# require_relative "lib/sql/create_table"
+# require_relative "lib/sql/insert"
 
-task default: :setup
+require_relative "lib/csv_to_sqlite"
+
+task default: :convert
 
 desc "Create tables used in sqlite"
-task :setup do
-  connection = CsvToSQLite::Database.new().connect
-  csv_table  = CsvToSQLite::CsvReader.load_file './spec/test_files/test_file.csv'
-  CsvToSQLite::SQL::CreateTable.new(name: 'persons', csv_table: csv_table, connection: connection).run
-  CsvToSQLite::SQL::Insert.new(name: 'persons', csv_table: csv_table, connection: connection).run
+task :convert do
+  CsvToSqlite::CsvToSQLite.new.convert(ARGV[1])
 end

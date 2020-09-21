@@ -6,7 +6,7 @@ RSpec.describe CsvToSqlite::SQL::CreateTable do
 
   before :each do
     connection = CsvToSqlite::Database.new.connect
-    csv_table = CsvToSqlite::CsvReader.load_file 'spec/test_files/test_file.csv'
+    csv_table = CsvToSqlite::CsvReader.new('spec/test_files/test_file.csv').load_file
     @table_maker = CsvToSqlite::SQL::CreateTable.new name: "some_table", csv_table: csv_table, connection: connection
   end
 
