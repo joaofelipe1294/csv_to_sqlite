@@ -1,28 +1,18 @@
-# CsvToSqlite
+# CsvToSqlite3
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/csv_to_sqlite`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+CsvToSqlite3 is a gem that aims to work as a executable like rake or bundler, it servs as a Sqlite3 database generator from csv files. It is used to create and insert all data from one or more csv files to the same Sqlite3 database.
+The ideia comes from a specific cenario when I needed to run complex sql queries on a huge database, and once I was afraid to run it directly in prolduction and it impacts in the operation I chose to run simples selects (select * from some_table when created_at > some_date) from each table used on my query, export to csv files than create a specific ruby script that create a sqlite3 database and run the inserts, thereby i can run any havy query on my local computer without generate any impact in the operation.
+Once this cenario is quite common I decided to rewrite the script to work with any csv file exported from any table.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Installed with gem:
 
-```ruby
-gem 'csv_to_sqlite'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install csv_to_sqlite
+    $ gem install csv_to_sqlite3
 
 ## Usage
 
-TODO: Write usage instructions here
+Once the gem is installed it is aviable the command "csv_to_sqlite", to generate a new database you need to run on terminal "csv_to_sqlite path/to/file.csv'". It will create a file named data.sqlite3 and create a table with name equal to file name, case the table already exists it will only insert all data from this file.
 
 ## Development
 
@@ -32,7 +22,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/csv_to_sqlite.
+Bug reports and pull requests are welcome on GitHub at https://github.com/joaofelipe1294/csv_to_sqlite3.
 
 
 ## License

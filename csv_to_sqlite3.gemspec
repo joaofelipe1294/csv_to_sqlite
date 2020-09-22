@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["joaofelipelopes"]
   spec.email         = ["joaofelipe1294@gmail.com"]
 
-  spec.summary       = %q{An easy way to convert a csv file into SQLite database.}
-  spec.description   = %q{Add a better description.}
+  spec.summary       = %q{An easy way to convert a csv file into SQLite3 database.}
+  spec.description   = %q{Add the executable "csv_to_sqlite" to your terminal, wich is used to create a SQLite3 database with all data from a csv file by running "csv_to_sqlite file.csv". It was developed to be used as a command line.}
   spec.homepage      = "https://github.com/joaofelipe1294/csv_to_sqlite3"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
