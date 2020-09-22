@@ -1,7 +1,9 @@
 # CsvToSqlite3
 
 CsvToSqlite3 is a gem that aims to work as a executable like rake or bundler, it servs as a Sqlite3 database generator from csv files. It is used to create and insert all data from one or more csv files to the same Sqlite3 database.
+
 The ideia comes from a specific cenario when I needed to run complex sql queries on a huge database, and once I was afraid to run it directly in prolduction and it impacts in the operation I chose to run simples selects (select * from some_table when created_at > some_date) from each table used on my query, export to csv files than create a specific ruby script that create a sqlite3 database and run the inserts, thereby i can run any havy query on my local computer without generate any impact in the operation.
+
 Once this cenario is quite common I decided to rewrite the script to work with any csv file exported from any table.
 
 ## Installation
@@ -13,6 +15,10 @@ Installed with gem:
 ## Usage
 
 Once the gem is installed it is aviable the command "csv_to_sqlite", to generate a new database you need to run on terminal "csv_to_sqlite path/to/file.csv'". It will create a file named data.sqlite3 and create a table with name equal to file name, case the table already exists it will only insert all data from this file.
+
+    $ csv_to_sqlite stores.csv
+
+By running the command above it will be generated a database data.sqlite3 with a table named stores with all data included. 
 
 ## Development
 
