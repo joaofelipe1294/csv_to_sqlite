@@ -16,7 +16,7 @@ module CsvToSqlite
 
     def run
       method = CsvToSqlite::ArgumentHandlerService.new(@args).call
-      self.convert(@args[1]) unless method.nil?
+      self.convert(@args.first) unless method.nil?
     end
 
     def convert file_path

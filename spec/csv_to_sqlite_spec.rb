@@ -6,7 +6,7 @@ RSpec.describe CsvToSqlite do
     context 'when argv is empty' do
       it 'should print some help' do
         expect {
-          CsvToSqlite::CsvToSQLite.new(["csv_to_sqlite"]).run
+          CsvToSqlite::CsvToSQLite.new([]).run
         }.to output("Run 'csv_to_sqlite -h' to receive some help or csv_to_sqlite csv_file.csv to generate a SQLite3 database from a csv file.\n").to_stdout
       end
     end

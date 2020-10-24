@@ -6,7 +6,7 @@ module CsvToSqlite
     end
 
     def call
-      return empty if @argv.size == 1
+      return empty if @argv.empty?
       return help if @argv.include? "-h"
       :convert
     end
@@ -17,10 +17,12 @@ module CsvToSqlite
       puts "csv_to_sqlite your_csv_file.csv"
       puts "==============================="
       puts "Some customisations will be aviable on next versions :)"
+      nil
     end
 
     def empty
       puts "Run 'csv_to_sqlite -h' to receive some help or csv_to_sqlite csv_file.csv to generate a SQLite3 database from a csv file."
+      nil
     end
 
   end
