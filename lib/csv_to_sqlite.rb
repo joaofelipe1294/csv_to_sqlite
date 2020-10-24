@@ -3,11 +3,21 @@ require_relative "./database"
 require_relative "./csv_reader"
 require_relative "./sql/create_table"
 require_relative "./sql/insert"
+require_relative "./argument_handler_service"
 
 module CsvToSqlite
   # class Error < StandardError; end
 
   class CsvToSQLite
+
+    def initialize argv
+      @args = argv
+    end
+
+    def run
+      method = CsvToSqlite::ArgumentHandlerService.new(@args).call
+      self.convert(@args.first) unless method.nil?
+    end
 
     def convert file_path
       connection = CsvToSqlite::Database.new().connect
