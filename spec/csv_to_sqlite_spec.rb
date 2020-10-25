@@ -16,8 +16,22 @@ RSpec.describe CsvToSqlite do
             CsvToSqlite::CsvToSQLite.new(["csv_to_sqlite", "-h"]).run
           }.to output("Run csv_lto_sqlite3 is easy!\nTo convert a csv file into a sqlite3 database you just need to run the follow command from the same directory of the csv file:\ncsv_to_sqlite your_csv_file.csv\n===============================\nSome customisations will be aviable on next versions :)\n").to_stdout
       end
-    end    
-    
+    end
+  end
+
+  describe '#table_name' do
+    context 'when args has -t parameter' do
+      it 'is expected to return value received' do
+        subject = CsvToSqlite::CsvToSQLite.new(["evangelion.csv", "-t", "evas"])
+        expect(subject.table_name).to match "evas"
+      end
+    end
+    context 'when args hasnt -t parameter' do
+      it 'is expected to reutn received file name' do
+        subject = CsvToSqlite::CsvToSQLite.new(["evangelion.csv"])
+        expect(subject.table_name).to match "evangelion"
+      end
+    end
   end
 
 end
