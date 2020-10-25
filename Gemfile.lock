@@ -22,6 +22,9 @@ GEM
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
     sqlite3 (1.4.2)
+    tty-cursor (0.7.1)
+    tty-spinner (0.9.3)
+      tty-cursor (~> 0.7)
 
 PLATFORMS
   ruby
@@ -31,6 +34,7 @@ DEPENDENCIES
   rake (~> 12.0)
   rspec (~> 3.9)
   sqlite3 (~> 1.4, >= 1.4.2)
+  tty-spinner
 
 BUNDLED WITH
    2.1.4
