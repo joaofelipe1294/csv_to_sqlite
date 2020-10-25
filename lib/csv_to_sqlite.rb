@@ -22,9 +22,25 @@ module CsvToSqlite
     def convert file_path
       connection = CsvToSqlite::Database.new().connect
       csv_table  = CsvToSqlite::CsvReader.new(file_path).load_file
-      table_name = file_path.split("/").last.split(".csv").first
       CsvToSqlite::SQL::CreateTable.new(name: table_name, csv_table: csv_table, connection: connection).run
       CsvToSqlite::SQL::Insert.new(name: table_name, csv_table: csv_table, connection: connection).run
+    end
+
+    def table_name
+      if @args.include? "-t"
+        table_name_index = @args.find_index "-t"
+        return @args[table_name_index + 1]
+      else
+        return csv_file_name.split("/").last.split(".csv").first
+      end
+    end
+
+    def csv_file_name
+      file_name = nil
+      @args.each_with_index do |param, index|
+        file_name = param if param.include? ".csv"
+      end
+      file_name
     end
 
   end
