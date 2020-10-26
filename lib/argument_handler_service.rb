@@ -16,6 +16,7 @@ module CsvToSqlite
       puts "To convert a csv file into a sqlite3 database you just need to run the follow command from the same directory of the csv file:"
       puts "csv_to_sqlite your_csv_file.csv"
       puts "==============================="
+      puts "-t <table-name> -> parameter used to set wich table will be created/used"
       puts "Some customisations will be aviable on next versions :)"
       nil
     end
