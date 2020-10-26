@@ -6,4 +6,4 @@ gemspec
 gem "rake", "~> 12.0"
 gem 'rspec', '~> 3.9'
 gem 'sqlite3', '~> 1.4', '>= 1.4.2'
-gem 'tty-spinner'
+gem 'tty-progressbar'
